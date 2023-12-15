@@ -1,0 +1,10 @@
+name: 'Simple Sitemap Extend'
+type: module
+description: 'Extends the functionality of the Simple Sitemap module.'
+core_version_requirement: ^9 || ^10
+package: Custom
+
+dependencies:
+  - simple_sitemap
+
+version: 1.0
