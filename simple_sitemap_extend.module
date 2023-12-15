@@ -44,23 +44,6 @@ function simple_sitemap_extend_simple_sitemap_links_alter(&$links, $sitemap) {
         unset($links[$index]);
         //\Drupal::logger('my_module')->notice(implode(", ", array_keys($node->get('field_model')->getValue()[0]["target_id"])));
     }
-
-
-    /*
-    // Get the node ID from the path.
-    $node_id = \Drupal::service('path.validator')->getUrlIfValid($path)->getRouteParameters();
-
-    \Drupal::logger('my_module')->notice(implode(", ", $node_id));
-
-    // Load the node entity.
-    $node = Node::load($node_id);
-
-    // Check if the loaded entity is a node and if the 'entity_model' field has the value 'page'.
-    if ($node instanceof Node && $node->hasField('entity_model') && $node->get('entity_model')->value === 'page') {
-      // Remove nodes with 'page' as the entity_model value from the sitemap.
-      unset($links[$index]);
-    }
-    */
   }
 }
 
