@@ -1,0 +1,6 @@
+# Core configuration form
+system.simple_sitemap_extend_settings:
+  title: 'Simple Sitemap Extend'
+  parent: system.admin_config_search
+  route_name: system.simple_sitemap_extend_settings
+  description: 'Configure Simple Sitemap Extend settings'

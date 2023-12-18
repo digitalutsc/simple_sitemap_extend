@@ -1,0 +1,8 @@
+#JSON-LD Markup configuration form
+system.simple_sitemap_extend_settings:
+  path: '/admin/config/search/simple_sitemap_extend'
+  defaults:
+    _form: '\Drupal\simple_sitemap_extend\Form\SimpleSitemapExtendSettingsForm'
+    _title: 'Simple Sitemap Extend'
+  requirements:
+    _permission: 'administer site configuration'

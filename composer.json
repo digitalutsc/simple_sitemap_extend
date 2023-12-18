@@ -1,0 +1,22 @@
+{
+    "name": "drupal/simple_sitemap_extend",
+    "description": "Extends the simple_sitemap mdoule",
+    "type": "drupal-module",
+    "homepage": "https://github.com/digitalutsc/simple_sitemap_extend",
+    "authors": [
+        {
+            "name": "Ben Wilson (wilso929)",
+            "homepage": "https://github.com/wilso929",
+            "role": "Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/digitalutsc/simple_sitemap_extend/issues",
+        "source": "https://github.com/digitalutsc/simple_sitemap_extend"
+    },
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "require": {
+        "islandora/simple_sitemap": "^4.1"
+    }
+}

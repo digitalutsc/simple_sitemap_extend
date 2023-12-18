@@ -11,6 +11,7 @@ use Drupal\Core\Entity\EntityTypeManagerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\simple_sitemap\Simplesitemap;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Drupal\simple_sitemap_extend\Form\SimpleSitemapExtendSettingsForm;
 
 /**
  * Implements hook_help().
@@ -31,6 +32,10 @@ function simple_sitemap_extend_help($route_name, RouteMatchInterface $route_matc
 function simple_sitemap_extend_simple_sitemap_links_alter(&$links, $sitemap) {
   /** @var EntityTypeManagerInterface $entityTypeManager */
   $entityTypeManager = \Drupal::service('entity_type.manager');
+  $config = \Drupal::state()->get(SimpleSitemapExtendSettingsForm::SIMPLE_SITEMAP_EXTEND_SETTINGS_PAGE);
+  if(!is_null($config) && !is_null($config['exclude_field'])){
+    $field = $config['exclude_field'];
+  }
 
   foreach ($links as $index => $link) {
     $path = $link['meta']['path'];
@@ -40,9 +45,8 @@ function simple_sitemap_extend_simple_sitemap_links_alter(&$links, $sitemap) {
         $node = Drupal\node\Entity\Node::load($matches[1]);
     }
 
-    if (isset($node) && $node instanceof Node && $node->hasField('field_model') && $node->get('field_model')->getValue()[0]["target_id"] === "15") {
+    if (isset($node) && isset($field) && $node instanceof Node && $node->hasField($field) && $node->get($field)->getValue()[0]["target_id"] === "15") {
         unset($links[$index]);
-        //\Drupal::logger('my_module')->notice(implode(", ", array_keys($node->get('field_model')->getValue()[0]["target_id"])));
     }
   }
 }
