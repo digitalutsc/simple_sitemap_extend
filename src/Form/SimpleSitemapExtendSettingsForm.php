@@ -37,6 +37,15 @@ class SimpleSitemapExtendSettingsForm extends FormBase {
 
     ];
 
+    $form['value_field'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t("Value"),
+      '#description' => $this->t("The value to exclude"),
+      '#required' => FALSE,
+      '#default_value' => $values['value_field'],
+
+    ];
+
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = [
       '#type' => 'submit',
