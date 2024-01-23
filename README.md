@@ -1,5 +1,5 @@
 # simple_sitemap_extend
-Exetends the use of the simple_sitemap modules to allow the exclusion of nodes based on a field value.
+Extends the use of the simple_sitemap modules to allow the exclusion of nodes based on a field value.
 
 Currently hardcoded to work only with the field_model field
 
